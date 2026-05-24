@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata"><fullName>Current_Snapshot__c</fullName><deleteConstraint>SetNull</deleteConstraint><label>Current Snapshot</label><referenceTo>Metadata_Component_Snapshot__c</referenceTo><relationshipLabel>Current Snapshot Diffs</relationshipLabel><relationshipName>Current_Snapshot_Diffs</relationshipName><type>Lookup</type></CustomField>

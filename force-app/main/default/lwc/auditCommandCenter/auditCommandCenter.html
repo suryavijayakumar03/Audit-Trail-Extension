@@ -1,0 +1,68 @@
+<template>
+    <lightning-card title="Audit Command Center" icon-name="standard:record_lookup">
+        <div class="slds-p-around_medium">
+            <template if:true={hasRecords}>
+                <div class="slds-grid slds-wrap slds-gutters_small kpi-grid">
+                    <template for:each={kpis} for:item="kpi">
+                        <div key={kpi.label} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-large-size_1-of-6">
+                            <article class={kpi.className}>
+                                <p class="slds-text-title_caps">{kpi.label}</p>
+                                <p class="kpi-value">{kpi.value}</p>
+                            </article>
+                        </div>
+                    </template>
+                </div>
+
+                <div class="slds-grid slds-wrap slds-gutters slds-m-top_medium">
+                    <section class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <h2 class="slds-text-heading_small slds-m-bottom_small">Recent High-Risk Changes</h2>
+                        <lightning-datatable key-field="Id" data={highRiskEvents} columns={eventColumns} hide-checkbox-column></lightning-datatable>
+                    </section>
+                    <section class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <h2 class="slds-text-heading_small slds-m-bottom_small">Recent Changes Requiring Review</h2>
+                        <lightning-datatable key-field="Id" data={reviewQueue} columns={reviewColumns} hide-checkbox-column></lightning-datatable>
+                    </section>
+                </div>
+
+                <div class="slds-grid slds-wrap slds-gutters slds-m-top_large">
+                    <section class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <h2 class="slds-text-heading_small slds-m-bottom_small">Changes by Risk Level</h2>
+                        <template for:each={riskCounts} for:item="item">
+                            <div key={item.label} class="bar-row">
+                                <span>{item.label}</span>
+                                <div class="bar"><span style={item.style}></span></div>
+                                <strong>{item.value}</strong>
+                            </div>
+                        </template>
+                    </section>
+                    <section class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                        <h2 class="slds-text-heading_small slds-m-bottom_small">Changes by Category</h2>
+                        <template for:each={categoryCounts} for:item="item">
+                            <div key={item.label} class="bar-row">
+                                <span>{item.label}</span>
+                                <div class="bar category"><span style={item.style}></span></div>
+                                <strong>{item.value}</strong>
+                            </div>
+                        </template>
+                    </section>
+                </div>
+
+                <section class="slds-m-top_large">
+                    <h2 class="slds-text-heading_small slds-m-bottom_small">Recent Audit Runs</h2>
+                    <lightning-datatable key-field="Id" data={auditRuns} columns={runColumns} hide-checkbox-column></lightning-datatable>
+                </section>
+            </template>
+
+            <template if:false={hasRecords}>
+                <div class="slds-illustration slds-illustration_small slds-p-vertical_large">
+                    <div class="slds-text-longform slds-text-align_center">
+                        <h2 class="slds-text-heading_medium">No audit records yet</h2>
+                        <p class="slds-m-top_small">Run the initial sync from Anonymous Apex:</p>
+                        <code>SetupAuditTrailSyncService.syncRecentChanges(30);</code>
+                        <p class="slds-m-top_small">Then refresh this page to view metadata audit KPIs, risk scoring, and review queues.</p>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

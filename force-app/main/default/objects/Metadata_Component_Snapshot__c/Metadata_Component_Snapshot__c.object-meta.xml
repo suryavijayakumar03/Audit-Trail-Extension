@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Metadata Component Snapshot</label>
+    <pluralLabel>Metadata Component Snapshots</pluralLabel>
+    <nameField>
+        <label>Metadata Snapshot Name</label>
+        <type>AutoNumber</type>
+        <displayFormat>MS-{00000}</displayFormat>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+</CustomObject>

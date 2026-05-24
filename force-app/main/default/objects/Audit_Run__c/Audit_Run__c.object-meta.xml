@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Audit Run</label>
+    <pluralLabel>Audit Runs</pluralLabel>
+    <nameField>
+        <label>Audit Run Name</label>
+        <type>AutoNumber</type>
+        <displayFormat>AR-{00000}</displayFormat>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+</CustomObject>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand><headerColor>#1B5F9E</headerColor><shouldOverrideOrgTheme>false</shouldOverrideOrgTheme></brand>
+    <description>Advanced metadata and configuration audit command center.</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Auditing Application</label>
+    <navType>Standard</navType>
+    <tabs>Audit_Command_Center</tabs>
+    <tabs>Metadata_Audit_Event__c</tabs>
+    <tabs>Audit_Run__c</tabs>
+    <tabs>Metadata_Component_Snapshot__c</tabs>
+    <tabs>Metadata_Diff__c</tabs>
+    <tabs>Metadata_Risk_Assessment__c</tabs>
+    <tabs>standard-Report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>
